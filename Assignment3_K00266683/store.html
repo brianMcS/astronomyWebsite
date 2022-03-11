@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+   
+   <head>
+    <title>Astronomy Ireland Webstore</title>   
+      <meta charset="utf-8">
+       
+       <meta name="viewport"  content="width=device- width, initial-scale=1.0">
+       
+       <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+       
+       <link rel="stylesheet" href="css/astronomy.css">
+       
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+       
+
+       <script>
+       
+           function getCookie(c_name){
+	var c_start,c_end;
+	if (document.cookie.length>0) {
+	  c_start=document.cookie.indexOf(c_name + "=");
+	  if (c_start != -1){ 
+		 c_start=c_start + c_name.length+1; 
+		 c_end=document.cookie.indexOf(";",c_start);
+		if (c_end == -1) 
+			c_end=document.cookie.length;
+		return unescape(document.cookie.substring(c_start,c_end));
+	  } 
+	}
+	return "";
+  }
+  
+  function getAllCookies(){
+	firstname=getCookie("firstname");
+	document.getElementById("output").innerHTML=(firstname);
+  }
+
+
+function getNewCookie(cname) {
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for(var i = 0; i < ca.length; i++) {
+		 var c = ca[i];
+		 while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
+}
+
+       
+       </script>
+       
+    
+   </head>    
+    
+ <body onload="getAllCookies();">
+ 
+    <header>
+         <a href="index.html"><img src="images/AstroLogo.jpg" alt="Astronomy Ireland Logo"></a>
+     </header>
+       
+        
+         
+         <nav class="topnav" id="myTopnav">
+             <a href="index.html">Home</a>
+             <a href="gallery.html">Gallery</a>
+             <a href="exhibitions.html">Exhibitions</a>
+             <a href="store.html" class="active">Store</a>
+             <a href="style.html">Style</a>
+             <a href="validate.html">Validation</a>
+             <a href="contact.html">Contact Us</a>
+             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                 <i class="fa fa-bars"></i>
+             </a>
+         </nav>
+     
+     <h1>Welcome to the Store</h1><h1 id="output">Name</h1>
+     
+        <div class="storeGrid">
+            
+            <article class="poster" id="item1">
+                <img src="images/apollo.jpg" alt="apollo poster">
+                <h2>Apollo</h2>
+                <p>Poster</p>
+                <p>€20</p>
+                <p class="CTA">Add to cart</p>
+
+            </article>
+            
+            <article class="poster" id="item2">
+                <img src="images/astronomy1.jpg" alt="milkyway">
+                <h2>Milky Way</h2>
+                <p>Poster</p>
+                <p>€20</p>
+                <p class="CTA">Add to cart</p>
+
+            </article>
+            
+            <article class="poster" id="item3">
+                <img src="images/astronomy7.jpg" alt="milkyway">
+                <h2>Galaxy</h2>
+                <p>Poster</p>
+                <p>€20</p>
+                <p class="CTA">Add to cart</p>
+
+            </article>
+            
+            <article class="poster" id="item4">
+                <img src="images/universe.jpg" alt="orange nebula">
+                <h2>Nebula</h2>
+                <p>Poster</p>
+                <p>€20</p>
+                <p class="CTA">Add to cart</p>
+
+            </article>
+            
+            <article class="poster" id="item5">
+                <img src="images/spaceman.jpg" alt="spaceman on moon">
+                <h2>Spaceman</h2>
+                <p>Poster</p>
+                <p>€20</p>
+                <p class="CTA">Add to cart</p>
+
+            </article>
+            
+            <article class="poster" id="item6">
+                <img src="images/astronomy3.jpg" alt="red space clouds">
+                <h2>Red Clouds</h2>
+                <p>Poster</p>
+                <p>€20</p>
+                <p class="CTA">Add to cart</p>
+
+            </article>
+            
+            <article class="poster" id="item7">
+                <img src="images/astronomy6.jpg" alt="orion nebula">
+                <h2>Orion</h2>
+                <p>Poster</p>
+                <p>€20</p>
+                <p class="CTA">Add to cart</p>
+
+            </article>
+            
+            <article class="poster" id="item8">
+                <img src ="images/astronomy5.jpg" alt="planet and stars">
+                <h2>Galaxy</h2>
+                <p>Poster</p>
+                <p>€20</p>
+                <p class="CTA">Add to cart</p>
+            </article>
+            
+            </div>  
+
+     
+        <footer>
+          
+          <div class="footer1">
+                <h3>About</h3>
+              <p>
+                  Astronomy Ireland
+                  <br>founded in 1987
+                  <br>by the Strony brothers.
+              </p>
+            </div>
+            
+            <div class="footer2">
+                <h3>Contact Details</h3>
+                    <p>
+                        Astronomy Ireland
+                        <br>Unit B1
+                        <br>Centrepoint Business Park
+                        <br>Ballycoolin
+                        <br>Dublin D11
+                        <br>T: (020) 570 52 00
+                        <br>E:<a href="mailto:admin@astronomy.ie">admin@astronomy.ie</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/AstronomyIRL"><img src="images/twitter-64.ico" alt="twitter"></a>
+                        <a href="https://www.facebook.com/AstronomyIRL"><img src="images/facebook-64.ico" alt="facebook"></a>
+                        <a href="https://www.instagram.com/astronomyie/"><img src="images/instagram-64.ico" alt="instagram"></a>
+                    </p>    
+            </div>
+                
+            <div class="footer3">
+                <h3>SiteMap</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="style.html">Style</a></li>
+                    <li><a href="validate.html">Validation</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+         </footer>
+         
+    
+     
+     <script>
+         function myFunction() {
+             var x = document.getElementById("myTopnav");
+             if (x.className === "topnav") {
+                 x.className += " responsive";
+             } 
+             else {
+                 x.className = "topnav";
+             }
+         }
+     </script>
+   
+ </body>   
+    
+
+</html>

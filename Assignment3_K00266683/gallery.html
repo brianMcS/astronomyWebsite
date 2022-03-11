@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+   
+   <head>
+    <title>Astronomy Ireland Gallery</title>   
+      <meta charset="utf-8">
+       
+       <meta name="viewport"  content="width=device- width, initial-scale=1.0">
+       
+       <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+       
+       
+       <link rel="stylesheet" href="css/astronomy.css">
+       
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+
+    
+   </head>    
+    
+ <body>
+ 
+     <header>
+         <a href="index.html"><img src="images/AstroLogo.jpg" alt="astronomy ireland logo"></a>
+     </header>
+       
+
+         
+         <nav class="topnav" id="myTopnav">
+             <a href="index.html">Home</a>
+             <a href="gallery.html" class="active">Gallery</a>
+             <a href="exhibitions.html">Exhibitions</a>
+             <a href="storeAccess.html">Store</a>
+             <a href="style.html">Style</a>
+             <a href="validate.html">Validation</a>
+             <a href="contact.html">Contact Us</a>
+             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                 <i class="fa fa-bars"></i>
+             </a>
+         </nav>
+     
+     <h1>Image Gallery</h1>
+     
+
+         <div class="gallery">
+    
+
+    <p>
+        <img src="images/astronomy1.jpg" alt="pic"  id="heroImg"/>
+    </p>
+
+
+    <p>
+        <a href="#" id="1"><img src="images/thumbnails/astronomy01.jpg" alt="milkyway" id="pic1"/></a>
+        <a href="#" id="2"><img src="images/thumbnails/astronomy02.jpg" alt="earth and the sun behind" id="pic2"/></a>
+        <a href="#" id="3"><img src="images/thumbnails/astronomy03.jpg" alt="red space clouds" id="pic3"/></a>
+        <a href="#" id="4"><img src="images/thumbnails/astronomy04.jpg" alt="galaxy" id="pic4"/></a>
+    </p>
+    
+    <p>
+        Move the cursor over the images/picture you wish to preview.
+    </p>
+    
+    <p>
+        <a href="#" id="5"><img src="images/thumbnails/astronomy05.jpg" alt="planet with galaxy" id="pic5"/></a>
+        <a href="#" id="6"><img src="images/thumbnails/astronomy06.jpg" alt="red nebula" id="pic6"/></a>
+        <a href="#" id="7"><img src="images/thumbnails/astronomy07.jpg" alt="milkyway" id="pic7"/></a>
+        <a href="#" id="8"><img src="images/thumbnails/astronomy08.jpg" alt="purple nebula" id="pic8"/></a>
+    </p>
+    <p>
+          <a href="#" id="prevLink">Previous |</a>
+          <a href="#" id="nextLink">Next</a>
+    </p>
+            
+         </div>      
+
+        <footer>
+          
+          <div class="footer1">
+                <h3>About</h3>
+              <p>
+                  Astronomy Ireland
+                  <br>founded in 1987
+                  <br>by the Strony brothers.
+              </p>
+            </div>
+            
+            <div class="footer2">
+                <h3>Contact Details</h3>
+                    <p>
+                        Astronomy Ireland
+                        <br>Unit B1
+                        <br>Centrepoint Business Park
+                        <br>Ballycoolin
+                        <br>Dublin D11
+                        <br>T: (020) 570 52 00
+                        <br>E:<a href="mailto:admin@astronomy.ie">admin@astronomy.ie</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/AstronomyIRL"><img src="images/twitter-64.ico" alt="twitter"></a>
+                        <a href="https://www.facebook.com/AstronomyIRL"><img src="images/facebook-64.ico" alt="facebook"></a>
+                        <a href="https://www.instagram.com/astronomyie/"><img src="images/instagram-64.ico" alt="instagram"></a>
+                    </p>    
+            </div>
+                
+            <div class="footer3">
+                <h3>SiteMap</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="style.html">Style</a></li>
+                    <li><a href="validate.html">Validation</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+         </footer>
+         
+    
+     
+     <script>
+         function myFunction() {
+             var x = document.getElementById("myTopnav");
+             if (x.className === "topnav") {
+                 x.className += " responsive";
+             } 
+             else {
+                 x.className = "topnav";
+             }
+         }
+         
+        
+        var currentImg=1;
+
+        document.getElementById("1").addEventListener("mouseover",loadImage);
+        document.getElementById("2").addEventListener("mouseover",loadImage);
+        document.getElementById("3").addEventListener("mouseover",loadImage);
+        document.getElementById("4").addEventListener("mouseover",loadImage);
+        document.getElementById("5").addEventListener("mouseover",loadImage);
+        document.getElementById("6").addEventListener("mouseover",loadImage);
+        document.getElementById("7").addEventListener("mouseover",loadImage);
+        document.getElementById("8").addEventListener("mouseover",loadImage);
+
+        document.getElementById("prevLink").addEventListener("click",prevLink);
+        document.getElementById("nextLink").addEventListener("click",nextLink);
+
+        function loadImage()
+
+        {   var imgNum=this.id;
+         document.getElementById("heroImg").src="images/astronomy"+imgNum+".jpg";
+         
+             currentImg=imgNum;
+        }
+
+
+        function nextLink()
+        {
+         if(currentImg==8)
+                    {
+                        document.getElementById("heroImg").src=
+                            "images/astronomy1.jpg";
+                        currentImg=1;
+                    }
+                else
+                    {
+                        currentImg++;
+                        document.getElementById("heroImg").src="images/astronomy"+currentImg+".jpg";
+                    }  
+
+        }
+
+        function prevLink(){
+                if(currentImg==1)
+                    {
+                        document.getElementById("heroImg").src=
+                            "images/astronomy5.jpg";
+                        currentImg=8;
+                    }
+                else
+                {
+                    currentImg--;
+                    document.getElementById("heroImg").src=
+                        "images/astronomy"+currentImg+".jpg";
+                }
+            }
+
+
+
+    
+     </script>
+     
+ </body>   
+    
+
+</html>

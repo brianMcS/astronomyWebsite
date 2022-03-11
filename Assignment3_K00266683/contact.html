@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+   
+   <head>
+    <title>Astronomy Ireland Contact</title>   
+      <meta charset="utf-8">
+       
+       <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+       
+       <meta name="viewport"  content="width=device- width, initial-scale=1.0">
+       
+       <link rel="stylesheet" href="css/astronomy.css">
+       
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+
+       <script>
+       
+           function validateForm(){
+               var firstname_val = document.getElementById("fname").value;
+               if (firstname_val =="" || firstname_val == null){
+                   alert("Please enter your first name");
+                   return false;
+                   }
+               
+               var surname_val = document.getElementById("sname").value;
+               if (surname_val =="" || surname_val == null){
+                   alert("Please enter your surname");
+                   return false;
+               }
+               
+               var age_val = document.getElementById("age").value;
+               if (age_val =="" || age_val == null){
+                   alert("Please enter your age");
+                   return false;
+               }
+               
+               var email1_val=document.getElementById("email1").value;
+               if (email1_val =="" || email1_val==null){
+                   alert("Please enter your email");
+                   return false;
+               }
+            
+               var email2_val=document.getElementById("email2").value;
+               if (email2_val==null || email2_val==""){
+                   alert("Please enter your email into the retype box.");
+                   return false;
+               }
+               
+               var email1_check=document.getElementById("email1").value;
+               if(validateEmail(email1_check)==false){
+                   alert("email is invalid");
+                   return false;
+               }
+               
+               
+               var email2_confirm=document.getElementById("email2").value;
+               if(email1_check != email2_confirm) 
+               {
+                   alert('Email Not Matching!');
+                   return false;
+               }
+               
+               var age_number=document.getElementById("age").value;
+               if(isNumeric(age_number)==false)
+               {
+                   alert("non numeric number");
+                   return false;
+               }
+        
+               var age_numb=document.getElementById("age").value;
+               if(age_numb<=1 || age_numb>=101)
+               {
+                   alert("Please enter a number between 1 and 100");
+                   return false;
+               }
+               
+                              
+               if(typeof(Storage) != "undefined"){
+                   localStorage.setItem("fname", firstname_val);
+                   localStorage.setItem("sname", surname_val);
+                   localStorage.setItem("age", age_val);
+                   localStorage.setItem("email", email1_val);
+               }
+               
+           }
+            
+             
+            
+            
+           function isNumeric(numericValue)
+           {
+               var numberPattern = /^[0-9]+$/;
+               return numberPattern.test(numericValue);
+           }
+    
+
+           function validateEmail(emailAddress)
+           {
+               var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+               return emailPattern.test(emailAddress)
+           }
+       
+       </script>
+    
+   </head>    
+    
+ <body>
+ 
+     <header>
+         <a href="index.html"><img src="images/AstroLogo.jpg" alt="Astronomy Ireland Logo"></a>
+     </header>
+       
+         
+         
+         <nav class="topnav" id="myTopnav">
+             <a href="index.html">Home</a>
+             <a href="gallery.html">Gallery</a>
+             <a href="exhibitions.html">Exhibitions</a>
+             <a href="storeAccess.html">Store</a>
+             <a href="style.html">Style</a>
+             <a href="validate.html">Validation</a>
+             <a href="contact.html" class="active">Contact Us</a>
+             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                 <i class="fa fa-bars"></i>
+             </a>
+         </nav>
+     
+     <h1>Contact Us</h1>
+     
+        <div class="contact-grid">
+    
+            <form id="details_form" action="confirm.html" method="get" onSubmit="return validateForm();" >
+            <fieldset>
+                <legend>Sign up to our newsletter!</legend>
+                
+                <ul id="list1">
+                    <li>
+                        <label for="fname">First name:</label>
+                        <input type="text" name="fname" id="fname" size="35">
+                    </li>
+                    <li>
+                        <label for="sname">Surname:</label>
+                        <input type="text" name="sname" id="sname" size="35">
+                    </li>
+                    <li>
+                        <label for="age">Age (from 1 to 100)</label>
+                        <input type="text" name="age" id="age" size="35"/>
+                    </li>
+                    <li>
+                        <label for="email1">Email Address</label>
+                        <input type="text" name="email1" id="email1" size="35"/>
+                    </li>
+                    <li>
+                        <label for="email2">Retype Email Address</label>
+                        <input type="text" name="email2" id="email2" size="35"/>
+                    </li>
+                </ul> 
+            
+                <ul>
+            
+                    <li>    
+                    
+                        <p>
+                            How often would you like to receive communications from us?
+                        </p>
+                    
+                    
+                    <li>
+                        <input type="radio" name="frequency" value="weekly" id="weekly">
+                        <label for="weekly">Weekly</label>
+                    </li>
+                        
+                    <li>
+                        <input type="radio" name="frequency" value="monthly" id="monthly">
+                        <label for="monthly">Monthly</label>
+                    </li>
+                        
+                    <li>
+                        <input type="radio" name="frequency" value="yearly" id="yearly">
+                        <label for="yearly">Biannually</label>
+                    </li>
+                   
+                </ul>   
+                <ul>    
+                <li>
+                    <p>
+                        Please indicate what type of information you are specifically interested in?
+                    </p>
+                    
+                    <li>
+                        <input type="checkbox" name="typeInfo" value="exhibitions" id="exhibitions">
+                        <label for="exhibitions">Exhibitions</label>
+                    </li>
+                    
+                    <li>
+                        <input type="checkbox" name="typeInfo" value="sale" id="saleOfWork">
+                        <label for="saleOfWork">Sale of Work</label>
+                    </li>
+                                            
+                    <li>
+                        <input type="checkbox" name="typeInfo" value="news" id="news">
+                        <label for="news">Community News</label>
+                    </li>
+                
+                </ul>
+                
+                
+                
+                <p class="button">
+                    <input type="submit" value="Submit" id="submit"> <input type="reset" value="Reset" id="reset">
+                </p>
+                  
+            </fieldset>
+        </form>
+
+       
+     </div>   
+          
+
+        <footer>
+          
+          <div class="footer1">
+                <h4>About</h4>
+              <p>
+                  Astronomy Ireland
+                  <br>founded in 1987
+                  <br>by the Strony brothers.
+              </p>
+            </div>
+            
+            <div class="footer2">
+                <h4>Contact Details</h4>
+                    <p>
+                        Astronomy Ireland
+                        <br>Unit B1
+                        <br>Centrepoint Business Park
+                        <br>Ballycoolin
+                        <br>Dublin D11
+                        <br>T: (020) 570 52 00
+                        <br>E:<a href="mailto:admin@astronomy.ie">admin@astronomy.ie</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/AstronomyIRL"><img src="images/twitter-64.ico" alt="twitter"></a>
+                        <a href="https://www.facebook.com/AstronomyIRL"><img src="images/facebook-64.ico" alt="facebook"></a>
+                        <a href="https://www.instagram.com/astronomyie/"><img src="images/instagram-64.ico" alt="instagram"></a>
+                    </p>    
+            </div>
+                
+            <div class="footer3">
+                <h4>SiteMap</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="style.html">Style</a></li>
+                    <li><a href="validate.html">Validation</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+         </footer>
+         
+    
+     
+     <script>
+         function myFunction() {
+             var x = document.getElementById("myTopnav");
+             if (x.className === "topnav") {
+                 x.className += " responsive";
+             } 
+             else {
+                 x.className = "topnav";
+             }
+         }
+         
+         
+     </script>
+   
+ </body>   
+    
+
+</html>
